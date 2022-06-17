@@ -7,6 +7,7 @@ import { MaterialModule } from './shared/material.module';
 import { UsersComponent } from './user-view/users/users.component';
 import { UserCreateComponent } from './user-view/user-create/user-create.component';
 import { RoutingModule } from './routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { RoutingModule } from './routing.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
     RoutingModule

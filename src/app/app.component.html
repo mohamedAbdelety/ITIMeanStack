@@ -3,10 +3,10 @@
         <h2>Mean Stack 100</h2>
         <mat-list>
             <mat-list-item>
-                <a routerLink="/users" routerLinkActive="active">Users</a>
+                <a routerLink="/users" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Users</a>
             </mat-list-item>
             <mat-list-item>
-                <a routerLink="/users/create" routerLinkActive="active">Add User</a>
+                <a routerLink="/users/create" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Add User</a>
             </mat-list-item>
         </mat-list>
     </mat-drawer>
