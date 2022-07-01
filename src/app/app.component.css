@@ -4,18 +4,35 @@
 }
 
 .example-sidenav-content {
-    display: flex;
-    height: 100%;
+    padding: 3rem 2rem 0 2rem;
 }
 
 .example-sidenav {
     padding: 20px;
+    background-color: #181e1e;
 }
 
 a {
     text-decoration: none;
 }
 
+h2 {
+    color: #fff;
+    padding-top: 3rem;
+}
+
+mat-list-item a {
+    color: #fff;
+    opacity: .4;
+}
+
 .active {
-    color: #f00;
+    opacity: 1 !important;
+    border-left: 3px solid #fff;
+    padding-left: 1rem;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
 }

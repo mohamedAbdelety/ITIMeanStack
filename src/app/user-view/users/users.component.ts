@@ -4,6 +4,10 @@ import { User } from 'src/app/Model/User';
 import { UserService } from 'src/app/services/user.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort, Sort} from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from 'src/app/shared/component/confirm-dialog/confirm-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Title } from '@angular/platform-browser';
 
 //
 
@@ -21,9 +25,10 @@ export class UsersComponent implements OnInit,AfterViewInit {
   displayedColumns: string[] = ['name', 'email', 'phone', 'website','action'];
   dataSource : MatTableDataSource<User> = new MatTableDataSource<User>();
 
-  constructor(private _userService : UserService) { }
+  constructor(private _title : Title,private _userService : UserService, private dialog : MatDialog,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this._title.setTitle("MeanStack | Users")
     this.loadRecord();
   }
 
@@ -33,15 +38,31 @@ export class UsersComponent implements OnInit,AfterViewInit {
   }
 
   loadRecord() {
-    this._userService.getUsers();
-    //listener
+
     this._userService.getUserSubject().subscribe((data : User[]) =>{
       this.dataSource.data = data;
     })
+    this._userService.getUsers();
   }
 
   onDelete(id : number){
-   this._userService.removeUser(id);
+    let name = this._userService.getUserById(id);
+    const dialog = this.dialog.open(ConfirmDialogComponent,{
+      width:'300px',
+      disableClose:true,
+      data:{
+        name
+      }
+    })
+
+    dialog.afterClosed().subscribe((result : boolean)=>{
+      if(result){
+        this._userService.removeUser(id);
+        this._snackBar.open(name+" deleted Succefully", "X",{
+          duration:3000
+        });
+      }
+    })
   }
 
 }

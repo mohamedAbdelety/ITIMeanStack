@@ -1,0 +1,12 @@
+mat-card {
+    padding: 2rem;
+}
+
+mat-card-title {
+    font-size: 2rem !important;
+    margin-bottom: 3rem !important;
+}
+
+mat-form-field {
+    width: 90%;
+}

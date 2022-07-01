@@ -8,9 +8,15 @@ import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatIconModule} from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 @NgModule({
-  declarations: [],
+  declarations: [
+    ConfirmDialogComponent
+  ],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -21,6 +27,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatPaginatorModule,
     MatSortModule,
     MatListModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatCardModule,
     FlexLayoutModule
   ],
   exports:[
@@ -32,6 +41,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSortModule,
     MatSidenavModule,
     MatListModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatCardModule,
     FlexLayoutModule
   ]
 

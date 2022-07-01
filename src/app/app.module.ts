@@ -8,6 +8,7 @@ import { UsersComponent } from './user-view/users/users.component';
 import { UserCreateComponent } from './user-view/user-create/user-create.component';
 import { RoutingModule } from './routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     MaterialModule,
     RoutingModule
   ],
